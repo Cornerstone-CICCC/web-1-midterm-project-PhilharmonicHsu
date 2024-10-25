@@ -1,48 +1,10 @@
+const FADE_IN_FROM_LEFT = 'fade-in-and-moving-from-left';
+const FADE_IN_FROM_BOTTOM = 'fade-in-and-moving-from-bottom'
+
 $(document).ready(function () {
-    $('#btn-portfolios').click(function () {
-        $('html, body').animate({
-            scrollTop: getScrollTopValueByDomId('#portfolios')
-        }, 600)
-    })
+    ['portfolios', 'experience', 'skills', 'contact'].forEach(setClickEventByName)
 
-    $('#btn-experience').click(function () {
-        $('html, body').animate({
-            scrollTop: getScrollTopValueByDomId('#experience')
-        }, 600)
-    })
-
-    $('#btn-skills').click(function () {
-        $('html, body').animate({
-            scrollTop: getScrollTopValueByDomId('#skills')
-        }, 600)
-    })
-
-    $('#btn-contact').click(function () {
-        $('html, body').animate({
-            scrollTop: getScrollTopValueByDomId('#contact')
-        }, 600)
-    })
-
-    function getScrollTopValueByDomId(domId) {
-        const nav_height = $('.nav').height();
-        const regular_offset = 60;
-
-        return $(domId).offset().top - 15 - nav_height - regular_offset;
-    }
-
-    function getScrollOffset(element) {
-        return $(element).offset().top;
-    }
-
-    function getWindowBottomLine() {
-        return $(window).scrollTop() + $(window).innerHeight();
-    }
-
-    // scroll event
     $(window).scroll(function () {
-        const FADE_IN_FROM_LEFT = 'fade-in-and-moving-from-left';
-        const FADE_IN_FROM_BOTTOM = 'fade-in-and-moving-from-bottom'
-
         if (getWindowBottomLine() >= getScrollOffset('#portfolios')) {
             $('#portfolios .card-content .github').addClass(FADE_IN_FROM_LEFT)
             $('#portfolios .card-content .describe').addClass(FADE_IN_FROM_BOTTOM)
@@ -70,3 +32,43 @@ $(document).ready(function () {
         }
     })
 })
+
+function setClickEventByName(name) {
+    let obj = {};
+
+    switch (name) {
+        case 'portfolios':
+            obj = {btnId: '#btn-portfolios', contextId: '#portfolios'};
+            break;
+        case 'experience':
+            obj = {btnId: '#btn-experience', contextId: '#experience'};
+            break;
+        case 'skills':
+            obj = {btnId: '#btn-skills', contextId: '#skills'};
+            break;
+        case 'contact':
+            obj = {btnId: '#btn-contact', contextId: '#contact'};
+            break;
+    }
+
+    $(obj.btnId).click(function () {
+        $('html, body').animate({
+            scrollTop: getScrollTopValueByDomId(obj.contextId)
+        }, 600)
+    })
+}
+
+function getScrollTopValueByDomId(domId) {
+    const nav_height = $('.nav').height();
+    const regular_offset = 60;
+
+    return getScrollOffset(domId) - 15 - nav_height - regular_offset;
+}
+
+function getScrollOffset(element) {
+    return $(element).offset().top;
+}
+
+function getWindowBottomLine() {
+    return $(window).scrollTop() + $(window).innerHeight();
+}
