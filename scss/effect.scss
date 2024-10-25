@@ -1,0 +1,31 @@
+.fade-in-and-moving-from-left {
+  opacity: 0;
+  animation: fadeInMoveFromLeft 1s ease-in-out forwards;
+
+  @keyframes fadeInMoveFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+.fade-in-and-moving-from-bottom {
+  opacity: 0;
+  animation: fadeInMoveFromRight 1s ease-in-out forwards;
+
+  @keyframes fadeInMoveFromRight {
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

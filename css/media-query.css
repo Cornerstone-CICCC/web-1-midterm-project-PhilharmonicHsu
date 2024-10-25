@@ -1,0 +1,119 @@
+@media (min-width: 601px) and (max-width: 900px) {
+  .card {
+    min-height: 34.5rem;
+  }
+  .card .intro .avatar img {
+    height: 23rem;
+  }
+  #skills .card-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  #skills .card-content .icon-component {
+    padding-left: 4rem;
+  }
+  #contact .card-content .info {
+    margin-left: 0;
+  }
+  #contact .card-content .picture {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  header .nav a {
+    margin: 0;
+  }
+  header .nav a .context {
+    display: none;
+  }
+  header .nav a svg {
+    margin: 0;
+    width: 40px;
+    height: 40px;
+  }
+  .card {
+    min-height: 25.5rem;
+  }
+  .card .card-title {
+    font-size: 2.2rem;
+  }
+  .card .intro {
+    grid-template-columns: 1fr;
+  }
+  .card .intro .left-side .hello {
+    padding-left: 2rem;
+    padding-top: 2rem;
+  }
+  .card .intro .left-side .mobile-avatar {
+    display: block;
+    text-align: center;
+  }
+  .card .intro .left-side .mobile-avatar img {
+    width: 90%;
+    border-radius: 30px;
+  }
+  .card .intro .left-side .details {
+    padding: 0 1rem 0 2rem;
+  }
+  .card .intro .avatar {
+    padding: 0;
+  }
+  .card .intro .avatar img {
+    display: none;
+  }
+  #portfolios .card-content .github {
+    align-items: center;
+  }
+  #portfolios .card-content .github img {
+    height: 70%;
+  }
+  #experience .card-content .career-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #experience .card-content .career-component .lifetime {
+    margin: 0 0 1rem 0;
+  }
+  #experience .card-content .career-component .head {
+    display: none;
+  }
+  #experience .card-content .career-component .details {
+    width: 80%;
+    margin-right: 0;
+  }
+  #skills .card-content {
+    grid-template-columns: 1fr;
+  }
+  #skills .card-content .icon-component {
+    padding-left: 2rem;
+  }
+  #contact .card-content .info {
+    margin-left: 0;
+  }
+  #contact .card-content .info .email .icon {
+    display: none;
+  }
+  #contact .card-content .info .email .address {
+    font-size: large;
+  }
+  #contact .card-content .info .other-contact {
+    padding-bottom: 2rem;
+  }
+  #contact .card-content .info .other-contact svg {
+    margin: 0 1rem;
+  }
+  #contact .card-content .info .mobile-picture {
+    display: block;
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+  #contact .card-content .info .mobile-picture img {
+    width: 80%;
+    border-radius: 30px;
+  }
+  #contact .card-content .picture {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=media-query.css.map */

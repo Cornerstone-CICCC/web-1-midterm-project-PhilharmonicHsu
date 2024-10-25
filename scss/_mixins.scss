@@ -1,0 +1,32 @@
+@mixin moving($direction: 'left', $distance: -250px) {
+  position: relative;
+  @if $direction == 'left' {
+    left: $distance;
+  } @else if $direction == 'right' {
+    right: $distance;
+  }
+}
+
+@mixin titleFont($position: 'card-title') {
+  font-family: Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bolder;
+  -webkit-text-stroke: 2px black; /* 描邊效果 */
+
+  @if $position == 'hello' {
+    font-size: 3rem;
+    color: white;
+  } @else if $position == 'card-title' {
+    font-size: 3rem;
+    color: white;
+  } @else if $position == 'nav-title' {
+    font-size: 1.3em;
+    color: #34584C;
+  }
+}
+
+@mixin detailFont() {
+  font-family: Montserrat, Futura;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
